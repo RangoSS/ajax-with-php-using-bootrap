@@ -28,6 +28,9 @@
      	header('location:management.php');
      	
      }
+     else  if($row['occupation']=='exco'){
+           header('location:esco_boss.php');
+     }
      else{
      	echo "wrong user";
      		header('location:login.php');

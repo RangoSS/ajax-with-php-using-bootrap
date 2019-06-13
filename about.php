@@ -8,6 +8,9 @@
                 <div class="col-md-3 col-sm-5 col-xs-12">
                     <div class="aboutus">
                         <h2 class="aboutus-title">About Us</h2>
+                        <div >
+                          <?php include"login_modal.php"; ?>
+                        </div>
                         <p class="aboutus-text" style="color: blue;">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
                         <p class="aboutus-text" style="color: green;">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem</p>
                         <a class="aboutus-more" href="#">read more</a>
