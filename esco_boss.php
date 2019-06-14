@@ -9,7 +9,7 @@
     				
 				<div class="widget-header">
 					<i class="icon-th-list"></i>
-					<h3>Table</h3>
+					<h2>all useres</h2>
 				</div> <!-- /widget-header -->
 				
 				<div class="widget-content">
@@ -20,105 +20,62 @@
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>Username</th>
-								<th>Password</th>
 								<th>Address</th>
 								<th>Contact</th>
 								<th>Gender</th>
 								<th>Occupation</th>
-								<th>Contact</th>
-								<th class="td-actions"></th>
+							
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 4.0</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 5.0</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 5.5</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 5.5</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 5.5</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Trident</td>
-								<td>Internet
-									 Explorer 5.5</td>
-								<td class="td-actions">
-									<a href="javascript:;" class="btn btn-small btn-primary">
-										<i class="btn-icon-only icon-ok"></i>										
-									</a>
-									
-									<a href="javascript:;" class="btn btn-small">
-										<i class="btn-icon-only icon-remove"></i>										
-									</a>
-								</td>
-							</tr>
+							
+								
+								
+								
+								
 							</tbody>
 						</table>
 					
-				</div> <!-- /widget-content -->
+				</div> 
 			
-			</div> <!-- /widget -->
+			</div> 
             </div>
             </div>
+
+            <script type="text/javascript">
+            	$(document).ready(function(){
+                   
+                  loadUsers();
+
+
+            	});
+
+
+            	function loadUsers()
+            	{
+            		 $.ajax({
+                   	  url:'ex_users.php',
+                   	  method:'POST',
+                   	 success:function(data){
+                   	 	$('tbody').html(data);
+                   	 }
+                   });
+            	}
+                  
+                  //we put action value,and row id value
+                  // we pass dell_user function to delete 
+            	 function del_users(rowid){
+
+                   	$.ajax({
+                       url:'ex_users.php',
+                       method: 'POST',
+                       data: {action:'delete_booking',rowid:rowid},
+                       success: function(data)
+                       {
+                       		loadUsers();
+                       }
+                       
+                   	});
+                   }
+
+            </script>
